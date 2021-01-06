@@ -1,0 +1,12 @@
+<h1>投稿一覧</h1>
+<ul>
+    <% @posts.each do |post| %>
+        <li><%= link_to post.title, posts_show_path(post.id) %>
+        <%= link_to '[削除]', post_delete_path(post.id), method: :delete, data: {confirm: "削除してもよろしいですか？"} %></li>
+    <% end %>
+</ul>
+<h1>新規投稿</h1>
+<%= form_for @newPost, :url => {:action => 'create'} do |f| %>
+    <%= f.text_field :title %>
+    <%= f.submit %>
+<% end %>
