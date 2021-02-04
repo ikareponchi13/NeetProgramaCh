@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>動画の説明</strong>
+  <%= @youtube.body %>
+</p>
+
+<p>
+  <strong>動画</strong>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @youtube.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+
+<%= link_to '編集', edit_youtube_path(@youtube) %> |
+<%= link_to 'もどる', youtubes_path %>
