@@ -4,15 +4,14 @@
 <li><%= link_to "おすすめYoutube動画埋め込みサイト", youtubes_path%></li>
 <li><%= link_to "手島優非公式応援サイト【愛がいっぱいIカップ】", tezimas_index_path%></li>
 
-
-<h1>板一覧</h1>
+<h2>板一覧</h2>
 <ul>
     <% @posts.each do |post| %>
         <li><%= link_to post.title, posts_show_path(post.id) %>
         <%= link_to '[削除]', post_delete_path(post.id), method: :delete, data: {confirm: "削除してもよろしいですか？"} %></li>
     <% end %>
 </ul>
-<h1>新規投稿</h1>
+<h2>新規投稿</h2>
 <%= form_for @newPost, :url => {:action => 'create'} do |f| %>
     <%= f.text_field :title %>
     <%= f.submit '投稿する' %>
