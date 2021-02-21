@@ -1,10 +1,10 @@
-<h1>に〜とプログラマ掲示板</h1>
+<h1>超個人的TV</h1>
 <li><a href="http://info.2ch.sc/guide/adv.html#saku_guide" target="_blank">ガイドライン(2ちゃんねる引用)</a></li>
 <li><a href="https://rarigo.com/" target="_blank">こうた日記</a></li>
 <li><%= link_to "おすすめYoutube動画埋め込みサイト", youtubes_path%></li>
 <li><%= link_to "手島優非公式応援サイト【愛がいっぱいIカップ】", tezimas_index_path%></li>
 
-<h2>板一覧</h2>
+<h2>番組一覧</h2>
 <ul>
     <% @posts.each do |post| %>
         <li><%= link_to post.title, posts_show_path(post.id) %>
