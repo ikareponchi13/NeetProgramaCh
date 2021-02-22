@@ -5,6 +5,10 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <% if Rails.env.production? %>
+      <%= render partial: 'layouts/application.html' %>
+    <% end %>
+
     
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -12,5 +16,17 @@
 
   <body>
     <%= yield %>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-126CXLCHYZ"></script>
+    <script>
+  
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-126CXLCHYZ');
+
+
+</script>
+
   </body>
 </html>
