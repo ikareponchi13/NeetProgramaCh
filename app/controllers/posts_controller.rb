@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @newPost = Post.new
-
   end
 
   def show
@@ -22,4 +21,5 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to posts_index_path
   end
+
 end
