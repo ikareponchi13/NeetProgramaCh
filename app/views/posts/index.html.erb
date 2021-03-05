@@ -1,12 +1,16 @@
-<h1 id="title">不運と踊</h1>
+<h1 id="title">に〜とプログラマちゃんねる</h1>
 <li><a href="http://info.2ch.sc/guide/adv.html#saku_guide" target="_blank">ガイドライン(2ちゃんねる引用)</a></li>
 <li><a href="" target="_blank">こうた日記（閉鎖中）</a></li>
 <li><%= link_to "おすすめYoutube動画埋め込みサイト", youtubes_path%></li>
 <li><%= link_to "手島優非公式応援サイト【愛がいっぱいIカップ】", tezimas_index_path%></li>
 
-<h2>番組一覧</h2>
-<ul class="posts">
-    <%= render @posts %>
+<h2>投稿一覧</h2>
+<ul>
+  <% @posts.each do |post| %>
+    <li><%= link_to post.title, posts_show_path(post.id) %>
+        <%= link_to '[削除]', post_delete_path(post.id), method: :delete, data: {confirm: "削除してもよろしいですか？"} %>
+</li>
+  <% end %>
 </ul>
 
 <h2>新規投稿</h2>
