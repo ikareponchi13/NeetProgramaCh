@@ -2,7 +2,7 @@
 <h1><%= @post.title %></h1>
 <% @comments.each_with_index do |comment, idx| %>
     <p>
-        <%= idx + 1 %>. <%= comment.name %> : <%= comment.body %>
+        <%= idx + 1 %>. <%= comment.name %> : <%= comment.body %>：<%= comment.created_at.to_s(:datetime)%>
     </p>
 <% end %>
 <h3>新規書き込み</h3>
@@ -10,7 +10,7 @@
   <p>お名前</p>
   <p><%= f.text_field :name %></p>
   <p>本文</p>
-  <p><%= f.text_area :body %></p>
+  <p><%= f.text_area :body, :cols => 100, :rows => 10  %></p>
   <%= f.hidden_field :post_id %>
   <%= f.submit 'コメントする'%>
 <% end %>
