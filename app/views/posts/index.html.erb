@@ -15,8 +15,9 @@
 <ul>
   <% @posts.each do |post| %>
     <li><%= link_to post.title, posts_show_path(post.id) %>
+        コメント数（<%= post.comments.count %>）
         <%= link_to '[削除]', post_delete_path(post.id), method: :delete, data: {confirm: "削除してもよろしいですか？"} %>
-</li>
+    </li>
   <% end %>
 </ul>
 <a class="twitter-timeline" data-width="300" data-height="300" href="https://twitter.com/akatsu_sumo?ref_src=twsrc%5Etfw">Tweets by akatsu_sumo</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -30,3 +31,4 @@
 <a class="twitter-timeline" data-width="300" data-height="600" href="https://twitter.com/BKBbunbun?ref_src=twsrc%5Etfw">Tweets by BKBbunbun</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <a class="twitter-timeline" data-width="300" data-height="600" href="https://twitter.com/konan_yade?ref_src=twsrc%5Etfw">Tweets by konan_yade</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hmBK9wpYbBY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<a class="twitter-timeline" data-width="300" data-height="600" data-theme="dark" href="https://twitter.com/nodacry?ref_src=twsrc%5Etfw">Tweets by nodacry</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
