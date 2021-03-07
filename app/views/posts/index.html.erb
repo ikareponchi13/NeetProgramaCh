@@ -1,11 +1,13 @@
 <h1 id="title">に〜とプログラマちゃんねる</h1>
 <a class="twitter-timeline" data-width="300" data-height="300" href="https://twitter.com/gogopiromi?ref_src=twsrc%5Etfw">Tweets by gogopiromi</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <li><a href="http://info.2ch.sc/guide/adv.html#saku_guide" target="_blank">ガイドライン(2ちゃんねる引用)</a></li>
+<li><a href="https://2ch.sc/">２ちゃんねる</a></li>
 <li><a href="" target="_blank">こうた日記（閉鎖中）</a></li>
 <li><%= link_to "おすすめYoutube動画埋め込みサイト", youtubes_path%></li>
 <li><%= link_to "手島優非公式応援サイト【愛がいっぱいIカップ】", tezimas_index_path%></li>
 <li><a href="https://6246.teacup.com/utunokyoyu/bbs" target="_blank">鬱の悩みを共有する会</a></li>
-
+<li><a href="https://5ch.net/" target="_blank">5ちゃんねる</a></li>
+<li><a href="https://fukurotoji.tokyo/" target="_blank">フクロトジ</a>（アダルト）</li>
 <p>検索</p>
 <%= form_tag(posts_index_path,:method => 'get') do %>
   <%= text_field_tag :search %>
@@ -16,7 +18,7 @@
 <ul>
   <% @posts.each do |post| %>
     <li><%= link_to post.title, posts_show_path(post.id) %>
-        コメント数（<%= post.comments.count %>）
+        コメント <%= post.comments.count %>
         <%= link_to '[削除]', post_delete_path(post.id), method: :delete, data: {confirm: "削除してもよろしいですか？"} %>
     </li>
   <% end %>
