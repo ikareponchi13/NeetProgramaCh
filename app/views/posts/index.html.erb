@@ -43,7 +43,7 @@
 
 <h2>投稿一覧</h2>
 <ul>
-  <% @posts.each do |post| %><a class="twitter-timeline" href="https://twitter.com/shinahiro426?ref_src=twsrc%5Etfw">Tweets by shinahiro426</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <% @posts.each do |post| %>
     <li><%= link_to post.title, posts_show_path(post.id) %>
         コメント <%= post.comments.count %>
         <%= link_to '[削除]', post_delete_path(post.id), method: :delete, data: {confirm: "削除してもよろしいですか？"} %>
