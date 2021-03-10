@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'uraposts/index'
+  get 'uraposts/show/:id' => 'uraposts#show', as: :uraposts_show
+  post 'uraposts/create' => 'uraposts#create'
+  delete 'uraposts/delete/:id' => 'uraposts#delete', as: :urapost_delete
+
+  post 'uracomments/create' => 'uracomment#create', as: :uracomment_create
+
   get 'tezimas/index'
   get 'tezimas/show/:id' => 'tezimas#show', as: :tezimas_show
   post 'tezimas/create' => 'tezimas#create'

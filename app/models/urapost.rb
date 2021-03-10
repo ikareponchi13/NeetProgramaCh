@@ -1,0 +1,2 @@
+class Urapost < ApplicationRecord
+end

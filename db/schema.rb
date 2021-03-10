@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_04_044149) do
+ActiveRecord::Schema.define(version: 2021_03_10_130207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,21 @@ ActiveRecord::Schema.define(version: 2021_02_04_044149) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "uracomments", force: :cascade do |t|
+    t.string "name"
+    t.text "body"
+    t.bigint "urapost_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["urapost_id"], name: "index_uracomments_on_urapost_id"
+  end
+
+  create_table "uraposts", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "youtubes", force: :cascade do |t|
     t.text "body"
     t.string "youtube_url"
@@ -45,4 +60,5 @@ ActiveRecord::Schema.define(version: 2021_02_04_044149) do
   end
 
   add_foreign_key "comments", "posts"
+  add_foreign_key "uracomments", "uraposts"
 end

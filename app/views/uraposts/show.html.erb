@@ -1,0 +1,17 @@
+<h1><%= link_to '裏に〜とプログラマちゃんねる', uraposts_index_url %></h1>
+
+<h1><%= @urapost.title %></h1>
+<% @uracomments.each_with_index do |uracomment , idx| %>
+  <p>
+    <%= idx + 1 %>. <%= uracomment.name %> : <%= uracomment.body %>
+  </p>
+<% end %>
+<h3>新規書き込み</h3>
+<%= form_for @newUracomment, :url => uracomment_create_path do |f| %>
+  <p>お名前</p>
+  <p><%= f.text_field :name %></p>
+  <p>本文</p>
+  <p><%= f.text_area :body %></p>
+  <%= f.hidden_field :urapost_id %>
+  <%= f.submit 'コメント'%>
+<% end %>
