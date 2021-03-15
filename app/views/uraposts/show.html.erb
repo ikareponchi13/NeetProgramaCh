@@ -3,7 +3,7 @@
 <h1><%= @urapost.title %></h1>
 <% @uracomments.each_with_index do |uracomment , idx| %>
   <p>
-    <%= idx + 1 %>. <%= uracomment.name %> : <%= uracomment.body %>
+    <%= idx + 1 %>. <%= uracomment.name %> : <%= uracomment.body %>：<%= uracomment.created_at.to_s(:datetime)%>
   </p>
 <% end %>
 <h3>新規書き込み</h3>

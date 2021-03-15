@@ -37,11 +37,13 @@
 <li><a href="https://toyokeizai.net/" target="_blank">東洋経済オンライン</a></li>
 <li><a href="https://logmi.jp/tech/articles/324056" target="_blank">半年かけてやっと動いた”Hello, World!"
 Ruby言語をまつもとゆきひろ氏が17歳から開発した理由</a></li>
+<li><a href="https://www.google.com/search?rlz=1C5CHFA_enJP901JP901&tbs=lf:1,lf_ui:9&tbm=lcl&sxsrf=ALeKk02q-VwsJ1DhPpEyqfm-eSG0JFcDEg:1615818066707&q=%E5%9B%BD%E7%AB%8B%E5%B8%82+bar&rflfq=1&num=10&ved=2ahUKEwjewYyvv7LvAhViNKYKHa96AkgQtgN6BAgEEAc#rlfi=hd:;si:17427191791928788889,l,Cg3lm73nq4vluIIgYmFyWhUKA2JhciIO5Zu956uLIOW4giBiYXKSAQNiYXKqAQsQASoHIgNiYXIoCA,y,X1M_4ggqfVA;mv:[[35.69932322721535,139.4483068977004],[35.69606893562196,139.44388125282583],null,[35.69769609801965,139.44609407526312],18]" target="_blank">レッドトップ</a>（国立のBar）</li>
 <h1>投稿一覧</h1>
 <ul>
   <% @uraposts.each do |urapost| %>
     <li>
         <%= link_to urapost.title, uraposts_show_path(urapost.id) %>
+        コメント <%= urapost.uracomments.count %>
         <%= link_to '[削除]', urapost_delete_path(urapost.id), method: :delete, data: {confirm: "削除してもよろしいですか？"} %>
     </li>
   <% end %>
