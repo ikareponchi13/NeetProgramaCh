@@ -12,16 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :body %>
+    <%= form.label :body, "動画内容" %>
     <%= form.text_area :body %>
   </div>
 
   <div class="field">
-    <%= form.label :youtube_url %>
+    <%= form.label :youtube_url, "YoutubeのURL" %>
     <%= form.text_field :youtube_url %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "動画を投稿" %>
   </div>
 <% end %>
