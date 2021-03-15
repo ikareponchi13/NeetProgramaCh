@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   get 'tezimas/show/:id' => 'tezimas#show', as: :tezimas_show
   post 'tezimas/create' => 'tezimas#create'
   delete 'tezimas/delete/:id' => 'tezimas#delete', as: :tezima_delete
+  
   resources :youtubes
+
   root :to => 'posts#index'
   get 'posts/index'
   get 'posts/show:id' => 'posts#show', as: :posts_show
