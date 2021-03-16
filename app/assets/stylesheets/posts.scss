@@ -2,12 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-#title {
-    color: aqua;
-}
-
 .indent {
     text-indent: 1em;
+}
+
+.sure {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.top {
+    position: absolute;
+    top: 0;
+    left: 300px;
+    background-color: aquamarine;
 }
 
 @media screen and (max-width: 1024px) {

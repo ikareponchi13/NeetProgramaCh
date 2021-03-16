@@ -1,28 +1,36 @@
-<h1 id="title">に〜とプログラマちゃんねる</h1>
+<div class="top">
 
-<li><%= link_to "裏に〜とプログラマちゃんねる", uraposts_index_path%></li>
-<li><a href="http://info.2ch.sc/guide/adv.html#saku_guide" target="_blank">ガイドライン(2ちゃんねる引用)</a></li>
-<li><a href="https://qiita.com/" target="_blank">Qiita</a></li>
+  <h1 id="title">に〜とプログラマちゃんねる</h1>
 
-<p>検索</p>
-<%= form_tag(posts_index_path,:method => 'get') do %>
-  <%= text_field_tag :search %>
-  <%= submit_tag '検索', :name => nil %>
-<% end %>
+  <li><%= link_to "裏に〜とプログラマちゃんねる", uraposts_index_path%></li>
+  <li><a href="http://info.2ch.sc/guide/adv.html#saku_guide" target="_blank">ガイドライン(2ちゃんねる引用)</a></li>
+  <li><a href="https://qiita.com/" target="_blank">Qiita</a></li>
 
-<h2>投稿一覧</h2>
-<ul>
-  <% @posts.each do |post| %>
-    <li><%= link_to post.title, posts_show_path(post.id) %>
-        コメント <%= post.comments.count %>
-        <%= link_to '[削除]', post_delete_path(post.id), method: :delete, data: {confirm: "削除してもよろしいですか？"} %>
-    </li>
+  <p>検索</p>
+  <%= form_tag(posts_index_path,:method => 'get') do %>
+    <%= text_field_tag :search %>
+    <%= submit_tag '検索', :name => nil %>
   <% end %>
-</ul>
+
+</div>
+
+<div class="sure">
+
+  <h2>投稿一覧</h2>
+  <ul>
+    <% @posts.each do |post| %>
+      <li><%= link_to post.title, posts_show_path(post.id) %>
+          コメント <%= post.comments.count %>
+          <%= link_to '[削除]', post_delete_path(post.id), method: :delete, data: {confirm: "削除してもよろしいですか？"} %>
+      </li>
+    <% end %>
+  </ul>
 
 
-<h2>新規投稿</h2>
-<%= form_for @newPost, :url => {:action => 'create'} do |f| %>
-    <%= f.text_field :title %>
-    <%= f.submit '投稿する' %>
-<% end %>
+  <h2>新規投稿</h2>
+  <%= form_for @newPost, :url => {:action => 'create'} do |f| %>
+      <%= f.text_field :title %>
+      <%= f.submit '投稿する' %>
+  <% end %>
+
+</div>
