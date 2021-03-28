@@ -1,2 +1,0 @@
-class Tezima < ApplicationRecord
-end

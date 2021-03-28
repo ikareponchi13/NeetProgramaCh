@@ -25,7 +25,6 @@
     <li class="indent"><a href="http://norvig.com/21-days.html" target="_blank">10年がかりでプログラムを学ぼう</a></li>
     <li><a href="" target="_blank">こうた日記（閉鎖中）</a></li>
     <li><%= link_to "クール放送", youtubes_path%></li>
-    <li><%= link_to "手島優非公式応援サイト【愛がいっぱいIカップ】", tezimas_index_path%></li>
     <li><a href="https://6246.teacup.com/utunokyoyu/bbs" target="_blank">鬱の悩みを共有する会</a></li>
     <li><a href="https://5ch.net/" target="_blank">5ちゃんねる</a></li>
     <li><a href="https://fukurotoji.tokyo/" target="_blank">フクロトジ</a>（アダルト）</li>
@@ -59,7 +58,7 @@
 
 <div class="sure">
 
-  <h2>投稿一覧</h2>
+  <h2>スレ一覧</h2>
   <ul>
     <% @posts.each do |post| %>
       <li><%= link_to post.title, posts_show_path(post.id) %>
@@ -70,10 +69,10 @@
   </ul>
 
 
-  <h2>新規投稿</h2>
+  <h2>新規スレ</h2>
   <%= form_for @newPost, :url => {:action => 'create'} do |f| %>
       <%= f.text_field :title %>
-      <%= f.submit '投稿する' %>
+      <%= f.submit 'スレ立て' %>
   <% end %>
 
 </div>
