@@ -22,7 +22,7 @@
   <p>に〜とプログラマちゃんねるは一緒に運営を手伝ってくれる仲間を募集しています。</p>
   <p>お問い合わせは<a href="https://join.slack.com/t/neeterdojo/shared_invite/zt-o7sb2axt-ToIQUTdmSW~~tlAyxsSmOA" target="_blank">Slack</a>まで</p>
 
-   <li><a href="http://info.2ch.sc/guide/adv.html#saku_guide" target="_blank">ガイドライン(2ちゃんねる引用)</a></li>
+    <li><a href="http://info.2ch.sc/guide/adv.html#saku_guide" target="_blank">ガイドライン(2ちゃんねる引用)</a></li>
     <%= image_tag 'nonsta-omosirosyasinn.png', size: '100x100'%>
     <li><a href="https://2ch.sc/">２ちゃんねる</a></li>
     <li><a href="https://cruel.org/freeware/hacker.html" target="_blank">ハッカーになろう</a></li>
@@ -61,7 +61,7 @@
 <div class="sure">
 
   <h2>スレ一覧</h2>
-  <ul>
+  <ul data-turbolinks="false">
     <% @posts.each do |post| %>
       <li><%= link_to post.title, posts_show_path(post.id) %>
           コメント <%= post.comments.count %>

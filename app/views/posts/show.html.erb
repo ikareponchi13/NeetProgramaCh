@@ -1,7 +1,7 @@
 <% content_for :css do %>
   <%= stylesheet_link_tag 'posts/show' %>
 <% end %>
-<h1><%= link_to 'に〜とプログラマちゃんねる', posts_index_url %></h1>
+<h1 data-turbolinks="false"><%= link_to 'に〜とプログラマちゃんねる', posts_index_url %></h1>
 <a border=0 target=_blank href=//open2ch.net/menu/><img src=//image.open2ch.net/image/banner/oni01.png></a>
 <h1><%= @post.title %></h1>
 <% @comments.each_with_index do |comment, idx| %>
