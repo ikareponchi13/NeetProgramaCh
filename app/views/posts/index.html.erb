@@ -61,7 +61,7 @@
 <div class="sure">
 
   <h2>スレ一覧</h2>
-  <ul data-turbolinks="false">
+  <ul>
     <% @posts.each do |post| %>
       <li><%= link_to post.title, posts_show_path(post.id) %>
           コメント <%= post.comments.count %>
