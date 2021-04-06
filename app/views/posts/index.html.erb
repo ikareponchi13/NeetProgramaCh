@@ -65,6 +65,7 @@
   <ul>
     <% @posts.each do |post| %>
       <li><%= link_to post.title, posts_show_path(post.id) %>
+          <%= link_to '[削除]', post_delete_path(post.id), method: :delete, data: {confirm: "削除してもよろしいでしょうか？"} %>
           コメント <%= post.comments.count %>
       </li>
     <% end %>
