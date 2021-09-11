@@ -4,10 +4,6 @@
 <h1><%= link_to 'に〜とプログラマちゃんねる', posts_index_url %></h1>
 <a border=0 target=_blank href=//open2ch.net/menu/><img src=//image.open2ch.net/image/banner/oni01.png></a>
 <h1><%= @post.title %></h1>
-<% @comments.each_with_index do |comment, idx| %>
-    <p><%= idx + 1 %>. <%= comment.name %>：<%= comment.created_at.to_s(:datetime)%></p>
-    <p><%= safe_join(comment.body.split("\n"),tag(:br)) %></p>
-<% end %>
 <h3>新規書き込み</h3>
 <%= form_for @newComment, :url => comment_create_path do |f| %>
   <p>お名前</p>
@@ -16,4 +12,8 @@
   <p><%= f.text_area :body, :cols => 100, :rows => 10  %></p>
   <%= f.hidden_field :post_id %>
   <%= f.submit 'コメントする'%>
+<% end %>
+<% @comments.each_with_index do |comment, idx| %>
+    <p><%= idx + 1 %>. <%= comment.name %>：<%= comment.created_at.to_s(:datetime)%></p>
+    <p><%= safe_join(comment.body.split("\n"),tag(:br)) %></p>
 <% end %>
