@@ -65,6 +65,12 @@
 
 <div class="sure">
 
+  <h2>新規スレ</h2>
+  <%= form_for @newPost, :url => {:action => 'create'} do |f| %>
+      <%= f.text_field :title %>
+      <%= f.submit 'スレ立て' %>
+  <% end %>
+
   <h2>スレ一覧</h2>
   <ul>
     <% @posts.each do |post| %>
@@ -74,12 +80,5 @@
       </li>
     <% end %>
   </ul>
-
-
-  <h2>新規スレ</h2>
-  <%= form_for @newPost, :url => {:action => 'create'} do |f| %>
-      <%= f.text_field :title %>
-      <%= f.submit 'スレ立て' %>
-  <% end %>
 
 </div>
